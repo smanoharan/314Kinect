@@ -3,25 +3,33 @@
 
 Kinect based Sign Language Interpreter (COMP314 Group Project)
 
-Requires a Microsoft Kinect (XBOX 360 version) to be connected to run.
-Requires the Microsoft Kinect SDK to be installed.
 
-Allows instructors to train signs (or any arbitrary gesture) 
-by performing the sign a few (5 or so) times to the 314Kinect program (in record mode).
-The 314Kinect program then "learns" the sign.
-Any student can perform the learned sign to the 314Kinect program (in evaluate mode)
-and the program will give feedback (a score out of 10) regarding how closely the 
-student performance of the sign matched that of the instructors.
+Use Case:
+---------
+1. Instructors train any sign (or any arbitrary gesture) by performing the sign a few (5 or so) times to the software (in record mode).
+2. The software then "learns" the sign and saves it to disk.
+3. A student performs the learned sign to the software (in evaluate mode).
+4. The software gives feedback (a score out of 10) to the student, based on how well the student performance matched that of the instructor.
 
-Each sign is modelled via  HMMs (Hidden Markov Models) by using only the 
-skeleton frame data provided by the Kinect.
-Fingers are not tracked, so 314Kinect is only suitable for signs (and gestures)
-involving no finger movement.
+Each sign is modelled via HMMs (Hidden Markov Models) using the skeleton frame data provided by the Kinect.
+Fingers are not tracked, so 314Kinect is only suitable for signs (and gestures) involving no finger movement.
+
+Requirements:
+-------------
+* A Microsoft Kinect (XBOX 360 version) must be connected to the PC.
+* Microsoft Kinect SDK must be installed.
+
+
+Libraries Used:
+---------------
+* Accord.NET (2.2.0), LGPL, http://code.google.com/p/accord/
+* AForge.NET (2.1.5), LGPL, http://www.aforgenet.com/
+
 
 Authors:
 -------------
-Sidd Arora
-William Lam
-Siva Manoharan
-Mark Will
+* Sidd Arora
+* William Lam
+* Siva Manoharan
+* Mark Will
 
