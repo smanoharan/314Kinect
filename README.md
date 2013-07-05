@@ -29,7 +29,7 @@ Libraries Used:
 Authors:
 -------------
 * Sidd Arora (http://github.com/siddarora)
-* William Lam 
+* William Lam (http://github.com/davanish)
 * Siva Manoharan (http://github.com/smanoharan)
 * Mark Will (http://github.com/maw41)
 
