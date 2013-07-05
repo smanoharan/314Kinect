@@ -28,8 +28,8 @@ Libraries Used:
 
 Authors:
 -------------
-* Sidd Arora
-* William Lam
-* Siva Manoharan
-* Mark Will
+* Sidd Arora (http://github.com/siddarora)
+* William Lam 
+* Siva Manoharan (http://github.com/smanoharan)
+* Mark Will (http://github.com/maw41)
 
