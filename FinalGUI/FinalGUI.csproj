@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{38E76497-AC3A-49A8-A872-02918C216B54}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalGUI</RootNamespace>
+    <AssemblyName>FinalGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;KINECT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Research.Kinect, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Microsoft Research KinectSDK\Microsoft.Research.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AsyncDelegateCommand.cs" />
+    <Compile Include="CursorController.cs" />
+    <Compile Include="HandController.xaml.cs">
+      <DependentUpon>HandController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSwitcher.xaml.cs">
+      <DependentUpon>PageSwitcher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\FinalComplete.xaml.cs">
+      <DependentUpon>FinalComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\ISpyFeedbackView.xaml.cs">
+      <DependentUpon>ISpyFeedbackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\ISpyPlay.xaml.cs">
+      <DependentUpon>ISpyPlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\SelectMode.xaml.cs">
+      <DependentUpon>SelectMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\StoryFeedbackView.xaml.cs">
+      <DependentUpon>StoryFeedbackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\StoryPerformView.xaml.cs">
+      <DependentUpon>StoryPerformView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fun_Mode_Pages\StoryManagerView.xaml.cs">
+      <DependentUpon>StoryManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\ModifySignClassification.xaml.cs">
+      <DependentUpon>ModifySignClassification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\ModifySignRecord.xaml.cs">
+      <DependentUpon>ModifySignRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignClassification.xaml.cs">
+      <DependentUpon>NewSignClassification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignComplete.xaml.cs">
+      <DependentUpon>NewSignComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignFinish.xaml.cs">
+      <DependentUpon>NewSignFinish.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignName.xaml.cs">
+      <DependentUpon>NewSignName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignPicture.xaml.cs">
+      <DependentUpon>NewSignPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignRecord.xaml.cs">
+      <DependentUpon>NewSignRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\NewSignVideo.xaml.cs">
+      <DependentUpon>NewSignVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\SignManager.xaml.cs">
+      <DependentUpon>SignManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sign_Manager_Pages\SignModifyView.xaml.cs">
+      <DependentUpon>SignModifyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\FeedbackView.xaml.cs">
+      <DependentUpon>FeedbackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\PerformView.xaml.cs">
+      <DependentUpon>PerformView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\PreviewView.xaml.cs">
+      <DependentUpon>PreviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\SelectionClassificationType.xaml.cs">
+      <DependentUpon>SelectionClassificationType.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\SignByClassification.xaml.cs">
+      <DependentUpon>SignByClassification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Start_Signing_Pages\SignSelection.xaml.cs">
+      <DependentUpon>SignSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreFormatter.cs" />
+    <Compile Include="SkeletonDrawer.cs" />
+    <Compile Include="Switcher.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISwitchable.cs" />
+    <Page Include="HandController.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\FinalComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\ISpyFeedbackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\ISpyPlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\SelectMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\StoryFeedbackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\StoryPerformView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fun_Mode_Pages\StoryManagerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\ModifySignClassification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\ModifySignRecord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignClassification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignFinish.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignName.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignRecord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\NewSignVideo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\SignManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Sign_Manager_Pages\SignModifyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\FeedbackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\PerformView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\PreviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\SelectionClassificationType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\SignByClassification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Start_Signing_Pages\SignSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sign_Content\Images\" />
+    <Folder Include="Sign_Content\Models\" />
+    <Folder Include="Sign_Content\Videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\filePathInvalid.png" />
+    <Resource Include="Images\Hand.png" />
+    <Resource Include="Images\icon.png" />
+    <Resource Include="Images\invalidVideoPath.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\face1.png" />
+    <Resource Include="Images\face2.png" />
+    <Resource Include="Images\face3.png" />
+    <Resource Include="Images\face4.png" />
+    <Resource Include="Images\face5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{B5749134-2F12-4135-BBB0-A0C5346265C1}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HandProcessor\FeatureExtraction.csproj">
+      <Project>{20ADBCD8-0B8D-432F-A3D7-73B40FE42C91}</Project>
+      <Name>FeatureExtraction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\3FingerPinch.png" />
+    <Resource Include="Images\BladeBroken.png" />
+    <Resource Include="Images\BladeFlat.png" />
+    <Resource Include="Images\BladeSide.png" />
+    <Resource Include="Images\FirstThumbsDown.png" />
+    <Resource Include="Images\FirstThumbsUp.png" />
+    <Resource Include="Images\FistDiagnolFront.png" />
+    <Resource Include="Images\FistDownSide.png" />
+    <Resource Include="Images\FistFinger.png" />
+    <Resource Include="Images\FistFingerBent.png" />
+    <Resource Include="Images\FistFront.png" />
+    <Resource Include="Images\FistSide.png" />
+    <Resource Include="Images\FourFIngers.png" />
+    <Resource Include="Images\grip.png" />
+    <Resource Include="Images\LastFinger.png" />
+    <Resource Include="Images\MiddleFinger.png" />
+    <Resource Include="Images\OpenFIst.png" />
+    <Resource Include="Images\OpenGrip.png" />
+    <Resource Include="Images\OpenHandBentFinger.png" />
+    <Resource Include="Images\openhandflat.png" />
+    <Resource Include="Images\OpenHandSide.png" />
+    <Resource Include="Images\OpenPinch.png" />
+    <Resource Include="Images\Pinch.png" />
+    <Resource Include="Images\ThreeFingersClosed.png" />
+    <Resource Include="Images\ThreeFingersOpen.png" />
+    <Resource Include="Images\ThumbsUp.png" />
+    <Resource Include="Images\TwoFingersClosed.png" />
+    <Resource Include="Images\TwoFingersOpen.png" />
+    <Resource Include="Images\VthumbFInger.png" />
+    <Resource Include="Images\WhatsUp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

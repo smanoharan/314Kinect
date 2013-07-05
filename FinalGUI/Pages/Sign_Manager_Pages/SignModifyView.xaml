@@ -1,0 +1,198 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	mc:Ignorable="d"
+	x:Class="FinalGUI.SignModifyView"
+	x:Name="UserControl"
+	d:DesignWidth="1280" d:DesignHeight="800" Background="#FF1B1B1B">
+
+	<UserControl.Resources>
+		<Style x:Key="btnBackToMainMenu" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Rectangle x:Name="rectangle" RadiusY="0" RadiusX="0" Stroke="{x:Null}" Fill="#FFB4A438" RenderTransformOrigin="0.5,0.5">
+								<Rectangle.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</Rectangle.RenderTransform>
+							</Rectangle>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ButtonStyleBack" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Rectangle x:Name="rectangle" Fill="#FF602626" RenderTransformOrigin="0.5,0.5">
+								<Rectangle.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</Rectangle.RenderTransform>
+							</Rectangle>
+							<ed:BlockArrow Fill="{x:Null}" Height="Auto" Margin="8" Orientation="Left" Width="Auto" Stroke="White"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="btnBackToMainMenu2" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle">
+												<EasingDoubleKeyFrame KeyTime="0" Value="1.05"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+												<EasingColorKeyFrame KeyTime="0" Value="#FF5A8B20"/>
+											</ColorAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Rectangle x:Name="rectangle" RadiusY="0" RadiusX="0" Stroke="{x:Null}" Fill="#FF0C3C5A" RenderTransformOrigin="0.5,0.5">
+								<Rectangle.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</Rectangle.RenderTransform>
+							</Rectangle>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+
+	<Viewbox x:Name="LayoutRoot" Stretch="Fill">
+		<Grid Height="800" Width="1280">
+			<Label x:Name="lblProcessing" FontSize="32" Foreground="White" Margin="567.5,364.097,373.449,379.903"/>
+			<Label x:Name="lblTitle" Content="Modify an Existing Sign" Height="56" Margin="49.749,40,0,0" VerticalAlignment="Top" FontSize="32" Foreground="White" HorizontalAlignment="Left" Width="388.051"/>
+			<Button x:Name="btnSave" Content="Save" Height="64" Margin="0,0,40.209,34" Style="{DynamicResource btnBackToMainMenu}" VerticalAlignment="Bottom" FontSize="16" Foreground="White" Click="btnSave_Click" HorizontalAlignment="Right" Width="120"/>
+			<Button x:Name="btnBack" HorizontalAlignment="Left" Height="80" Margin="49.749,0,0,18" Style="{DynamicResource ButtonStyleBack}" VerticalAlignment="Bottom" Width="100" Click="btnBack_Click"/>
+			<Label x:Name="lblSignName" Content="Sign name:" Margin="204.636,180.5,0,0" VerticalAlignment="Top" FontSize="21.333" Foreground="White" HorizontalAlignment="Left" Width="Auto" HorizontalContentAlignment="Center" />
+			<TextBox x:Name="txtPictureURL" Margin="383.636,262.205,600.364,0" TextWrapping="NoWrap" RenderTransformOrigin="0.648,2.729" Height="29.5" VerticalAlignment="Top"/>
+			<Button x:Name="btnPicUpload" Content="Upload" Margin="0,243.98,410.364,0" Style="{DynamicResource btnBackToMainMenu2}" FontSize="16" Foreground="White" HorizontalAlignment="Right" Width="120" Height="61.49" VerticalAlignment="Top" Click="btnPicUpload_Click"/>
+			<TextBox x:Name="txtVideoURL" Margin="383.636,0,600.364,328.314" TextWrapping="NoWrap" RenderTransformOrigin="0.648,2.729" Height="29.5" VerticalAlignment="Bottom"/>
+			<Button x:Name="btnVidUpload" Content="Upload" Margin="0,0,410.364,317.317" Style="{DynamicResource btnBackToMainMenu2}" FontSize="16" Foreground="White" HorizontalAlignment="Right" Width="120" Height="58.244" VerticalAlignment="Bottom" Click="btnVidUpload_Click"/>
+			<Label x:Name="lblPicturePath" Content="Picture Path:" Margin="204.636,253.332,0,0" VerticalAlignment="Top" FontSize="21.333" Foreground="White" HorizontalAlignment="Left" Width="Auto" HorizontalContentAlignment="Center" />
+			<Label x:Name="lblVideoPath" Content="Video Path:" Margin="204.636,0,0,328.314" FontSize="21.333" Foreground="White" HorizontalAlignment="Left" Width="Auto" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" />
+			<Label x:Name="lblSignClass" Content="Sign Class:" Margin="204.636,342.332,0,0" VerticalAlignment="Top" FontSize="21.333" Foreground="White" HorizontalAlignment="Left" Width="Auto" HorizontalContentAlignment="Center" />
+			<Label x:Name="lblSignClassOutput" Content="Class name" Margin="383.636,342.332,600.364,0" VerticalAlignment="Top" FontSize="21.333" Foreground="White"/>
+			<Button x:Name="btnAddExamples" Content="Add more training examples" Margin="383.636,0,600.364,218.046" Style="{DynamicResource btnBackToMainMenu2}" FontSize="16" Foreground="White" Height="58.244" VerticalAlignment="Bottom" Click="btnAddExamples_Click"/>
+			<Button x:Name="btnChangeClass" Content="Change class" Margin="0,332.98,410.364,0" Style="{DynamicResource btnBackToMainMenu2}" FontSize="16" Foreground="White" HorizontalAlignment="Right" Width="120" Height="61.49" VerticalAlignment="Top" Click="btnChangeClass_Click"/>
+			<TextBox x:Name="txtBoxSignName" Margin="383.636,189.373,600.364,0" TextWrapping="NoWrap" RenderTransformOrigin="0.648,2.729" Height="29.5" VerticalAlignment="Top"/>
+			<Label x:Name="lblNewExampleCount" Content="5 new training examples have been trained" Height="56" Margin="383.636,0,508.313,158.046" VerticalAlignment="Bottom" FontSize="18.667" Foreground="White" Visibility="Hidden"/>
+		</Grid>
+	</Viewbox>
+</UserControl>

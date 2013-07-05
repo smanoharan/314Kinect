@@ -1,0 +1,19 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="FinalGUI.HandController"
+	x:Name="UserControl"
+	d:DesignWidth="50" d:DesignHeight="50" Cursor="None">
+
+	<Grid x:Name="LayoutRoot">
+		<Ellipse x:Name="Mask" Fill="#FFAF3131" Width="50" Height="0"/>
+		<Ellipse x:Name="Image" Width="50" Height="50">
+			<Ellipse.Fill>
+				<ImageBrush ImageSource="Images/Hand.png"/>
+			</Ellipse.Fill>
+		</Ellipse>
+	</Grid>
+</UserControl>
